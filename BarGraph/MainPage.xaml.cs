@@ -1,6 +1,8 @@
 ﻿using BarGraph.Model;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Net.Http.Json;
 
@@ -36,7 +38,10 @@ public partial class MainPage : ContentPage
                 Monkeys.Add(monkey);
             }
             //Draw Graph!
+            //Series[0].Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 };
+            //XAxes[0].Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" };
 
+            //bool isHidden to hide the graph b4 clicking the button
         }
         catch (Exception ex)
         {
@@ -46,25 +51,30 @@ public partial class MainPage : ContentPage
         }
     }
 
-    //Set graph
-    //Series[0].Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 };
-    //XAxes[0].Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" };
-
-    //bool isHidden to hide the graph b4 clicking the button
-    public ISeries[] Series { get; set; }
-            = new ISeries[]
+    public ISeries[] Series { get; set; } =
+   {
+        new ColumnSeries<double>
+        {
+            Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000  }, //number of bars and its max value
+            Fill = new SolidColorPaint(SKColors.BlueViolet)
+        }
+    };
+    public Axis[] XAxes { get; set; } =
+    {
+            new Axis
             {
-                new LineSeries<string>
-                {
-                    Name = "Monkeys",
-                    Values = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" }
-                },
-                new ColumnSeries<int> 
-                {
-                    Name = "Monkeys",
-                    Values = new int[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 }
-                }
-            };
+                Name = "Monkeys", // Name of the y axes
+                Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" }, //the value of each bar
+            }
+        };
+
+    public Axis[] YAxes { get; set; } =
+    {
+            new Axis
+            {
+                Name = "Population", // Name of the y axes
+            }
+        };
 
 }
    
