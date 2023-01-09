@@ -35,6 +35,8 @@ public partial class MainPage : ContentPage
             {
                 Monkeys.Add(monkey);
             }
+            //Draw Graph!
+
         }
         catch (Exception ex)
         {

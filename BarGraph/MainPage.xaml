@@ -7,7 +7,8 @@
     <StackLayout>
         <Button x:Name="ShowGraph"
                 Text="Show Graph" 
-                Clicked="ButtonClicked" />
+                Clicked="ButtonClicked"
+                HorizontalOptions="Center"/>
 
         <lvc:CartesianChart Series="{Binding Series}" />
 
