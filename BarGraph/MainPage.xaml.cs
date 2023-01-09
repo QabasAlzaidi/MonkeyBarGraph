@@ -57,7 +57,7 @@ public partial class MainPage : ContentPage
                     Name = "Monkeys",
                     Values = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" }
                 },
-                new ColumnSeries<int>
+                new ColumnSeries<int> 
                 {
                     Name = "Monkeys",
                     Values = new int[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 }
