@@ -38,8 +38,8 @@ public partial class MainPage : ContentPage
                 Monkeys.Add(monkey);
             }
             //Draw Graph!
-            //Series[0].Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 };
-            //XAxes[0].Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" };
+            Series[0].Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000 };
+            XAxes[0].Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" };
 
             //bool isHidden to hide the graph b4 clicking the button
         }
@@ -55,7 +55,7 @@ public partial class MainPage : ContentPage
    {
         new ColumnSeries<double>
         {
-            Values = new double[] { 10000, 23000, 11000, 17000, 15000, 1300, 19000  }, //number of bars and its max value
+            Values = new double[] {  }, //number of bars and its max value
             Fill = new SolidColorPaint(SKColors.BlueViolet)
         }
     };
@@ -64,7 +64,7 @@ public partial class MainPage : ContentPage
             new Axis
             {
                 Name = "Monkeys", // Name of the y axes
-                Labels = new string[] { "Baboon", "Capuchin Monkey", "Blue Monkey", "Howler Monkey", "Japanese Monkey", "Mandrill Monkey", "Proboscis Monkey" }, //the value of each bar
+                Labels = new string[] {}, //the value of each bar
             }
         };
 
